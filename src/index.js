@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import App from './components/App';
 import reportWebVitals from './reportWebVitals';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Voice from './components/Voice';
@@ -11,6 +11,10 @@ import Speech from './components/Speech';
 import Image from './components/Image';
 import Compare from './components/Compare';
 import Name from './components/Name';
+import Aadhar from './components/Aadhar';
+import Pan from './components/Pan';
+import Salary from './components/Salary'
+import Finish from './components/Finish';
 const appRouter = createBrowserRouter([
   {
     path: '/',
@@ -43,6 +47,22 @@ const appRouter = createBrowserRouter([
   {
     path:"/name", 
     element:<Name/>
+  }, 
+  {
+    path:"/aadhar", 
+    element:<Aadhar/>
+  }, 
+  {
+    path:"/pan", 
+    element:<Pan/>
+  }, 
+  {
+    path:"/salary", 
+    element:<Salary/>
+  },
+  {
+    path:"/finish", 
+    element: <Finish/>
   }
 ]);
 

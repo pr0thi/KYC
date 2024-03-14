@@ -1,13 +1,14 @@
 /* Speech Component CSS */
 
 .form-container {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f4f4f4;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
+  max-width: 400px;
+  margin: 50px auto 0; /* Add 50px margin-top */
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
   
   .voice-label {
     font-weight: bold;
@@ -55,7 +56,7 @@
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    margin-left: 650px;
+    margin-left: 250px;
   }
   
   .speak-button:hover {
@@ -70,10 +71,11 @@
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    margin-left: 650px;
+    margin-left: 250px;
   }
   
   .stop-button:hover {
     background-color: #c82333;
   }
+  
   

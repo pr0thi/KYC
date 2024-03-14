@@ -4,23 +4,18 @@ import "../App.css";
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 import Speech from './Speech';
 import "./Name.css"
+import { Link } from 'react-router-dom';
 
 const Name = () => {
 
-
     const webcamRef = useRef(null);
     const mediaRecorderRef = useRef(null);
+    const { transcript, browserSupportsSpeechRecognition } = useSpeechRecognition();
     const [capturing, setCapturing] = useState(false);
     const [recordedChunks, setRecordedChunks] = useState([]);
-    const { transcript, browserSupportsSpeechRecognition } = useSpeechRecognition();
-
-
     const [textToCopy, setTextToCopy] = useState("");
     const [isCopied, setIsCopied] = useState(false);
     const [spokenValues, setSpokenValues] = useState([]);
-
-
-
 
     const handleStartRecording = useCallback(() => {
         setCapturing(true);
@@ -70,11 +65,9 @@ const Name = () => {
         // Add the transcript to the array of spoken values
         setSpokenValues(prevValues => [...prevValues, transcript]);
         console.log(textToCopy);
-
     };
 
     const handleReset = () => {
-
         setIsCopied(false);
         setSpokenValues([]);
         setRecordedChunks([]);
@@ -88,9 +81,15 @@ const Name = () => {
 
     return (
         <>
-            <Speech data="Please speak out your name as per government ID by tapping the Start Recording button. if you wish to hear this prompt again tap on speak"/>
+            <div className='speech-container'>
+                <Speech data="Please speak out your name as per government ID by tapping the Start Recording button. if you wish to hear this prompt again tap on speak"/>
+            </div>
             <div className='container-av'>
-                <Webcam audio={false} ref={webcamRef} mirrored={true} />
+                <div className="video-container">
+                    <Webcam audio={false} ref={webcamRef} mirrored={true} />
+                    
+                </div>
+                <div className='vid-btn'>
                 {capturing ? (
                     <button className="btn" onClick={handleStopRecording}>Stop Recording</button>
                 ) : (
@@ -99,22 +98,28 @@ const Name = () => {
                 {recordedChunks.length > 0 && (
                     <button className="btn" onClick={handleDownload}>Download</button>
                 )}
-                <div className="container">
-                    <div className="main-content" onClick={handleCopy}>
-                        {transcript}
+                
+                </div>
+                <div className="voice-container">
+                    <div className='font-weight-bold'>
+                        <div className='font-bold font-xl text-xl'>Data Stored : </div>
+                        {spokenValues.map((value, index) => (
+
+                            <div className='font-xl text-xl' key={index}>{value}</div>
+                        ))}
                     </div>
-                    <div className="btn-style">
-                        <button className="btn" onClick={handleCopy}>Copy to clipboard</button>
-                        <button className="btn" onClick={handleStartRecording}>Start Recording</button>
-                        <button className="btn" onClick={handleStopRecording}>Stop Recording</button>
-                        <button className="btn" onClick={handleReset}>Reset</button>
+                    <div className="container">
+                        <div className="main-content" onClick={handleCopy}>
+                            {transcript}
+                        </div>
+                        <div className="btn">
+                            <button className="btn" onClick={handleCopy}>Preview</button>
+                            <button className="btn" onClick={handleReset}>Reset</button>
+                        <Link to="/aadhar"><button className='btn-next'>Next</button></Link>
+                            
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div>
-                {spokenValues.map((value, index) => (
-                    <div key={index}>{value}</div>
-                ))}
             </div>
         </>
     );

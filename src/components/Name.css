@@ -1,41 +1,187 @@
 /* Name Component CSS */
 
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+}
+
+h2 {
+  color: #2b2d38;
+  text-align: center;
+  font-size: 48px;
+  letter-spacing: -0.2px;
+  font-family: "Merriweather", serif;
+}
+
+p {
+  max-width: 50rem;
+  text-align: center;
+  margin-top: 24px;
+  margin-bottom: 100px;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.main-content {
+  max-width: 50rem;
+  width: 100%;
+  min-height: 400px;
+  height: auto;
+  padding: 18px;
+  position: relative;
+  resize: none;
+  box-shadow: 0 12px 48px 0px rgba(109, 117, 141, 0.2);
+  background: #ffffff;
+  border: 1px solid #e7e9f5;
+  border-radius: 16px;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.main-content:focus {
+  border: 1px solid rgba(43, 45, 56, 0.3);
+  outline: none;
+}
+
+.btn-style {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+button {
+  background: #11a683;
+  color: #ffffff;
+  border-radius: 6px;
+  padding: 16px 32px;
+  border: none;
+  font-size: 18px;
+  letter-spacing: 1px;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+button:focus,
+button:hover {
+  background: #2ac9a4;
+  box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.1);
+}
+
+.counter-container {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
     margin-top: 20px;
   }
-  
-  .main-content {
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin-bottom: 20px;
-    cursor: pointer;
-  }
-  
-  .btn-style {
-    display: flex;
-    justify-content: space-between;
-    width: 300px;
-    margin-bottom: 20px;
-  }
-  
-  .btn {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .btn:hover {
-    background-color: #0056b3;
+
+  h2 {
+    font-size: 28px;
   }
 
-  .container-av{
-    display: flex;
-    justify-content: space-between;
+  p {
+    font-size: 16px;
+    margin-bottom: 40px;
+    margin-top: 15px;
   }
+
+  .main-content {
+    font-size: 16px;
+  }
+
+  button {
+    padding: 12px 28px;
+    font-size: 16px;
+  }
+
+  .counter-container {
+    flex-direction: column;
+  }
+
+  .counter-container p:first-child {
+    margin-bottom: 0;
+  }
+}
+.container-av {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px;
+  background-color: #f9f9f9; /* Subtle white background */
+  padding: 20px; /* Add padding for better spacing */
+  border-radius: 8px; /* Add rounded corners */
+}
+
+.video-container {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.voice-container {
+  flex: 1;
+}
+
+.speech-container {
+  margin-bottom: 20px;
+}
+
+.btn-style {
+  margin-top: 20px;
+}
+
+.btn-style button {
+  margin-right: 10px;
+}
+
+.btn {
+  margin-top: 10px;
+}
+
+.vid-btn {
+  margin-top: 20px; /* Adjusted margin-top */
+  display: flex;
+  flex-direction: column;
+}
+
+.vid-btn button {
+  margin-bottom: 10px; /* Add margin between buttons */
+}
+
+.main-content {
+  max-width: 50rem;
+  width: 100%;
+  min-height: 400px;
+  height: auto;
+  padding: 18px;
+  position: relative;
+  resize: none;
+  box-shadow: 0 12px 48px 0px rgba(109, 117, 141, 0.2);
+  background: #ffffff; /* White background */
+  border: 1px solid #e7e9f5;
+  border-radius: 16px;
+  font-size: 18px;
+  line-height: 1.6;
+  overflow: auto; /* Add overflow to enable scrolling if needed */
+}
+
+.main-content:focus {
+  border: 1px solid rgba(43, 45, 56, 0.3);
+  outline: none;
+}
+
+.spoken-values {
+  margin-top: 20px; /* Adjust margin top as needed */
+}
+
+.spoken-value {
+  font-weight: bold; /* Make the text bold */
+  font-size: 18px; /* Adjust font size as needed */
+  color: #333; /* Set color to a dark shade for visibility */
+  margin-bottom: 10px; /* Add spacing between values */
+}
+

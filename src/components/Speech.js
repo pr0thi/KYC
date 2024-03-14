@@ -14,6 +14,7 @@ const Speech = (props) => {
     onEnd,
   });
 
+  const defaultVoiceIndex = voices.findIndex(voice => voice.lang === 'hi-IN' && voice.name.includes('Google Hindi')); // Find index of Google Hindi voice
   const voice = voices[voiceIndex] || null;
 
   const styleFlexRow = { display: 'flex', flexDirection: 'row' };
@@ -26,7 +27,7 @@ const Speech = (props) => {
   useEffect(() => {
     // Speak the text when the component mounts
     speak({ text: props.data, voice, rate, pitch });
-  }, []); 
+  },[]); 
 
   return (
     <>
@@ -43,7 +44,7 @@ const Speech = (props) => {
             <select
               id="voice"
               name="voice"
-              value={voiceIndex || ''}
+              value={voiceIndex || defaultVoiceIndex}
               className="voice-select"
               onChange={(event) => {
                 setVoiceIndex(event.target.value);
@@ -93,18 +94,18 @@ const Speech = (props) => {
               />
             </div>
             <div className="control-group" style={styleContainerRatePitch}>
-              <label className="message-label">Message: {props.name}</label>
+              <label className="message-label">Message: {props.data}</label>
               {speaking ? (
                 <button type="button" className="stop-button" onClick={cancel}>
                   Stop
                 </button>
               ) : (
                 <button
-                  type="button"
+                  type="btn"
                   className="speak-button"
                   onClick={() => speak({ text: props.data, voice, rate, pitch })}
                 >
-                  Speak
+                  Listen
                 </button>
               )}
             </div>

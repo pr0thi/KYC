@@ -1,6 +1,8 @@
 import React, { useRef, useState, useEffect } from 'react';
-import "./Compare.css"
-const Compare = () => {
+import Speech from './Speech';
+import { Link } from 'react-router-dom';
+
+const Pan = () => {
   const videoRef = useRef(null);
   const canvasRef = useRef(null);
   const [uploadedImage, setUploadedImage] = useState(null);
@@ -72,15 +74,18 @@ const Compare = () => {
 
   return (
     <div>
+        <Speech data="Please upload your Salary Slip"/>
       <input className='btn-f' type="file" accept="image/*" onChange={handleImageUpload} />
+      <Link to='/pan'><button className='btn'>Previous</button></Link>
       <button className='btn' onClick={() => setIsCapturing(true)}>Capture Image</button>
+      <Link to='/finish'><button className='btn'>Next</button></Link>
       <video ref={videoRef} mirror="false" width="400" height="300" autoPlay></video>
       <canvas ref={canvasRef} width="400" height="300"></canvas>
       {similarity !== null && (
-        <p>{similarity ? "Images are similar" : "Images are not similar"}</p>
+        <p>{similarity ? "Verified" : "Please try again"}</p>
       )}
     </div>
   );
 };
 
-export default Compare;
+export default Pan;
