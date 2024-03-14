@@ -1,4 +1,14 @@
-# Getting Started with Create React App
+# Submission for SC Hackathon
+
+Presented by Team XINO - 
+Aditya Garg 
+Akshit Gupta 
+Harsh Pruthi
+Ankur Saini 
+Ishan Sharma
+
+Demo Video for project - https://youtu.be/Bh1PBpyaEfY
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
