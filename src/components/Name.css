@@ -1,0 +1,41 @@
+/* Name Component CSS */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .main-content {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+    cursor: pointer;
+  }
+  
+  .btn-style {
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+    margin-bottom: 20px;
+  }
+  
+  .btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color: #0056b3;
+  }
+
+  .container-av{
+    display: flex;
+    justify-content: space-between;
+  }
